@@ -1,0 +1,8 @@
+# Recommended runtime: Python 3.10 or 3.11 (TensorFlow compatibility)
+Flask==3.0.3
+numpy==1.26.4
+opencv-python==4.9.0.80
+tensorflow==2.15.1
+keras==2.15.0
+fer==22.5.1
+mtcnn==0.1.1

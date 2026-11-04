@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Live facial expression recognition demo">
+  <title>AI Facial Emotion Detector</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <div class="icon" aria-hidden="true">☺</div>
+      <h1>AI Facial Emotion Detector</h1>
+      <p>Real-time facial expression recognition using computer vision and the FER model.</p>
+    </header>
+
+    <section class="camera-card" aria-labelledby="camera-title">
+      <div class="camera-header">
+        <span id="camera-title">Live Camera</span>
+        <span class="status" role="status" aria-live="polite">● Ready</span>
+      </div>
+      <div class="camera-box">
+        <video id="camera" autoplay muted playsinline aria-label="Live webcam preview"></video>
+        <div id="camera-placeholder">Camera preview will appear here</div>
+      </div>
+      <div class="buttons">
+        <button id="start" type="button">Start Camera</button>
+        <button id="stop" type="button" disabled>Stop Camera</button>
+      </div>
+    </section>
+
+    <section class="emotion-result" aria-live="polite">
+      <div class="result-title">PREDICTED FACIAL EXPRESSION</div>
+      <div class="emotion-circle"><span id="emotion">Waiting...</span></div>
+      <div id="confidence">Confidence: 0%</div>
+      <div class="progress" aria-label="Prediction confidence">
+        <div id="progress-bar" class="progress-bar"></div>
+      </div>
+      <p id="face-count" class="face-count">No face analyzed yet</p>
+    </section>
+
+    <section class="features" aria-label="Project features">
+      <article class="feature"><span aria-hidden="true">📷</span><div><strong>Live camera</strong><small>Browser webcam input</small></div></article>
+      <article class="feature"><span aria-hidden="true">🧠</span><div><strong>AI prediction</strong><small>FER facial-expression model</small></div></article>
+      <article class="feature"><span aria-hidden="true">📊</span><div><strong>Confidence score</strong><small>Model score shown as percentage</small></div></article>
+    </section>
+
+    <footer>For demonstration and learning only. Facial-expression predictions do not establish a person's actual feelings.</footer>
+  </main>
+</body>
+</html>
